@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40EE51771B0997A100127778 /* FilmAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE51761B0997A100127778 /* FilmAPI.m */; };
+		40EE517A1B0997D200127778 /* FilmModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE51791B0997D200127778 /* FilmModel.m */; };
+		40EE517D1B0997F900127778 /* FilmChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE517C1B0997F900127778 /* FilmChapter.m */; };
+		40EE51801B0998ED00127778 /* NSString+DecodeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE517F1B0998ED00127778 /* NSString+DecodeString.m */; };
+		40EE51831B09998D00127778 /* PlayerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE51821B09998D00127778 /* PlayerItem.m */; };
+		40EE51861B099AC400127778 /* M3U8.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE51851B099AC400127778 /* M3U8.m */; };
+		40EE518C1B09A44200127778 /* Subtitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE518B1B09A44200127778 /* Subtitle.m */; };
 		4DAAB8C133525E1E43720C6B /* libPods-FilmAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E168AD8D832A2ABC5EEDEB /* libPods-FilmAPI.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -40,6 +47,20 @@
 		01E168AD8D832A2ABC5EEDEB /* libPods-FilmAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FilmAPI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		048394DFBD307BD6C1AF4671 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		403ADE0EC31DFAD9F568412D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		40EE51751B0997A100127778 /* FilmAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmAPI.h; sourceTree = "<group>"; };
+		40EE51761B0997A100127778 /* FilmAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmAPI.m; sourceTree = "<group>"; };
+		40EE51781B0997D200127778 /* FilmModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmModel.h; sourceTree = "<group>"; };
+		40EE51791B0997D200127778 /* FilmModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmModel.m; sourceTree = "<group>"; };
+		40EE517B1B0997F900127778 /* FilmChapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmChapter.h; sourceTree = "<group>"; };
+		40EE517C1B0997F900127778 /* FilmChapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmChapter.m; sourceTree = "<group>"; };
+		40EE517E1B0998ED00127778 /* NSString+DecodeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DecodeString.h"; sourceTree = "<group>"; };
+		40EE517F1B0998ED00127778 /* NSString+DecodeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DecodeString.m"; sourceTree = "<group>"; };
+		40EE51811B09998D00127778 /* PlayerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerItem.h; sourceTree = "<group>"; };
+		40EE51821B09998D00127778 /* PlayerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerItem.m; sourceTree = "<group>"; };
+		40EE51841B099AC400127778 /* M3U8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3U8.h; sourceTree = "<group>"; };
+		40EE51851B099AC400127778 /* M3U8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3U8.m; sourceTree = "<group>"; };
+		40EE518A1B09A44200127778 /* Subtitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subtitle.h; sourceTree = "<group>"; };
+		40EE518B1B09A44200127778 /* Subtitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subtitle.m; sourceTree = "<group>"; };
 		5129E9679DC0C4BB071D0FAA /* FilmAPI.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FilmAPI.podspec; path = ../FilmAPI.podspec; sourceTree = "<group>"; };
 		5233EA7409499713F3BFB877 /* Pods-FilmAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmAPI.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilmAPI/Pods-FilmAPI.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* FilmAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +116,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40EE51741B09978800127778 /* FilmAPI */ = {
+			isa = PBXGroup;
+			children = (
+				40EE518A1B09A44200127778 /* Subtitle.h */,
+				40EE518B1B09A44200127778 /* Subtitle.m */,
+				40EE517E1B0998ED00127778 /* NSString+DecodeString.h */,
+				40EE517F1B0998ED00127778 /* NSString+DecodeString.m */,
+				40EE51781B0997D200127778 /* FilmModel.h */,
+				40EE51791B0997D200127778 /* FilmModel.m */,
+				40EE51751B0997A100127778 /* FilmAPI.h */,
+				40EE51761B0997A100127778 /* FilmAPI.m */,
+				40EE517B1B0997F900127778 /* FilmChapter.h */,
+				40EE517C1B0997F900127778 /* FilmChapter.m */,
+				40EE51811B09998D00127778 /* PlayerItem.h */,
+				40EE51821B09998D00127778 /* PlayerItem.m */,
+				40EE51841B099AC400127778 /* M3U8.h */,
+				40EE51851B099AC400127778 /* M3U8.m */,
+			);
+			name = FilmAPI;
+			path = ../../Pod/Classes/FilmAPI;
+			sourceTree = "<group>";
+		};
 		5BC079646C9D7FE0C12A3DD8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +186,7 @@
 		6003F593195388D20070C39A /* FilmAPI */ = {
 			isa = PBXGroup;
 			children = (
+				40EE51741B09978800127778 /* FilmAPI */,
 				6003F59C195388D20070C39A /* DzFilmAppDelegate.h */,
 				6003F59D195388D20070C39A /* DzFilmAppDelegate.m */,
 				6003F59F195388D20070C39A /* Main_iPhone.storyboard */,
@@ -361,8 +405,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40EE517A1B0997D200127778 /* FilmModel.m in Sources */,
+				40EE518C1B09A44200127778 /* Subtitle.m in Sources */,
+				40EE51861B099AC400127778 /* M3U8.m in Sources */,
+				40EE517D1B0997F900127778 /* FilmChapter.m in Sources */,
+				40EE51801B0998ED00127778 /* NSString+DecodeString.m in Sources */,
+				40EE51831B09998D00127778 /* PlayerItem.m in Sources */,
 				6003F59E195388D20070C39A /* DzFilmAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* DzFilmViewController.m in Sources */,
+				40EE51771B0997A100127778 /* FilmAPI.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

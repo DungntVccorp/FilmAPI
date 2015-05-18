@@ -629,6 +629,7 @@
 
 -(void)SearchFilmMovieWithName:(NSString *)filmSearchtext onComplete:(void (^)(BOOL suc,NSArray *items))complete{
     filmSearchtext = [filmSearchtext stringByReplacingOccurrencesOfString:@":" withString:@""];
+    filmSearchtext = [filmSearchtext stringByReplacingOccurrencesOfString:@" " withString:@"-"];
     [self SearchFilmWithName:filmSearchtext onComplete:^(BOOL success, NSArray *listFilmSearch) {
         if(listFilmSearch.count!=0){
             FilmModel *m = listFilmSearch.firstObject;

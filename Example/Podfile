@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'FilmAPI', :exclusive => true do
+  pod "FilmAPI", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "FilmAPI", :path => "../"
+
+  
+end

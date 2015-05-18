@@ -1,0 +1,25 @@
+{
+  "name": "FilmAPI",
+  "version": "0.1.0",
+  "summary": "A short description of FilmAPI.",
+  "description": "                       An optional longer description of FilmAPI\n\n                       * Markdown format.\n                       * Don't worry about the indent, we strip it!\n",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/FilmAPI",
+  "license": "MIT",
+  "authors": {
+    "DungntVccorp": "dung.nt.a5901679@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/FilmAPI.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "FilmAPI": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

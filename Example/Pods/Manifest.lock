@@ -1,0 +1,14 @@
+PODS:
+  - FilmAPI (0.1.0)
+
+DEPENDENCIES:
+  - FilmAPI (from `../`)
+
+EXTERNAL SOURCES:
+  FilmAPI:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FilmAPI: 748f8a900db56f6db6cd73219f1ca26e4c38101c
+
+COCOAPODS: 0.37.0

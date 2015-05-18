@@ -12,5 +12,8 @@ s.source_files = 'Pod/Classes/FilmAPI/*.{h,m}'
 s.dependency 'hpple'
 s.dependency 'AFNetworking'
 s.dependency 'DzCategory'
+s.dependency 'XMLDictionary'
+s.dependency 'FCFileManager'
+
 
 end

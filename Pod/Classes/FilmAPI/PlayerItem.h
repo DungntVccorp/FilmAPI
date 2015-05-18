@@ -14,7 +14,7 @@
 @property(nonatomic,strong)NSArray *sublabel;
 @property(nonatomic,strong)NSArray *subfile;
 @property(nonatomic,strong)NSString *filetitle;
-
+@property(nonatomic,strong)NSString *title;
 
 -(void)getPlayerlink:(void(^)(NSMutableArray *urls))complete;
 

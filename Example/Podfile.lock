@@ -21,16 +21,22 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - DzCategory (1.0.0)
+  - FCFileManager (1.0.7)
   - hpple (0.2.0)
+  - XMLDictionary (1.4)
 
 DEPENDENCIES:
   - AFNetworking
   - DzCategory
+  - FCFileManager
   - hpple
+  - XMLDictionary
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   DzCategory: 1649d4f5a29f9bfe402673482b10fe7a37cd3d1e
+  FCFileManager: fd77211e8448b0e9713d51d4f75769d9dc4ceb58
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
+  XMLDictionary: f9f51601ba76678b594ab485f2b00ec1fed23724
 
 COCOAPODS: 0.37.0

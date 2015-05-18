@@ -4,6 +4,8 @@ target 'FilmAPI', :exclusive => true do
   pod 'hpple'
   pod 'AFNetworking'
   pod 'DzCategory'
+  pod 'XMLDictionary'
+  pod 'FCFileManager'
 end
 
 target 'Tests', :exclusive => true do

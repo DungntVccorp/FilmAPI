@@ -54,6 +54,18 @@
 #define COCOAPODS_VERSION_MINOR_DzCategory 0
 #define COCOAPODS_VERSION_PATCH_DzCategory 0
 
+// FCFileManager
+#define COCOAPODS_POD_AVAILABLE_FCFileManager
+#define COCOAPODS_VERSION_MAJOR_FCFileManager 1
+#define COCOAPODS_VERSION_MINOR_FCFileManager 0
+#define COCOAPODS_VERSION_PATCH_FCFileManager 7
+
+// XMLDictionary
+#define COCOAPODS_POD_AVAILABLE_XMLDictionary
+#define COCOAPODS_VERSION_MAJOR_XMLDictionary 1
+#define COCOAPODS_VERSION_MINOR_XMLDictionary 4
+#define COCOAPODS_VERSION_PATCH_XMLDictionary 0
+
 // hpple
 #define COCOAPODS_POD_AVAILABLE_hpple
 #define COCOAPODS_VERSION_MAJOR_hpple 0

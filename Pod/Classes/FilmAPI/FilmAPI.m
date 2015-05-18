@@ -24,6 +24,9 @@
         NSString *path = [FCFileManager pathForDocumentsDirectory];
         path = [path stringByAppendingString:@"/data.plist"];
         _sharedAPI.dataParser = [NSDictionary dictionaryWithContentsOfFile:path];
+        if(_sharedAPI == nil){
+            
+        }
     });
     
     return _sharedAPI;
@@ -623,4 +626,33 @@
         });
     });
 }
+
+-(void)SearchFilmMovieWithName:(NSString *)filmSearchtext onComplete:(void (^)(BOOL suc,NSArray *items))complete{
+    filmSearchtext = [filmSearchtext stringByReplacingOccurrencesOfString:@":" withString:@""];
+    [self SearchFilmWithName:filmSearchtext onComplete:^(BOOL success, NSArray *listFilmSearch) {
+        if(listFilmSearch.count!=0){
+            FilmModel *m = listFilmSearch.firstObject;
+            [self LoadFilmInfoWithURL:m.filmURL onComplete:^(BOOL success, FilmModel *fm) {
+                if(success){
+                    [self LoadFilmChapterWithUrl:[NSString stringWithFormat:@"http://hdonline.vn/episode/vxml?film=%@",fm.filmUUID] refLink:fm.filmURL onComplete:^(BOOL success, NSArray *chaps) {
+                        if(success){
+                            complete(TRUE,chaps);
+                        }
+                        else{
+                            complete(FALSE,nil);
+                        }
+                    }];
+                }
+                else{
+                    complete(FALSE,nil);
+                }
+                
+            }];
+        }
+        else{
+            complete(FALSE,nil);
+        }
+    }];
+}
+
 @end

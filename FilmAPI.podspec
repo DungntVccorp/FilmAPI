@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = "FilmAPI"
-s.version          = "1.0.4"
+s.version          = "1.0.5"
 s.summary          = "DzLib dungnt Collection liblary FilmAPI Movie DB"
 s.homepage         = "https://github.com/DungntVccorp/FilmAPI.git"
 s.license          = 'Apache License'

@@ -664,7 +664,6 @@
             FilmModel *m = listFilmSearch.firstObject;
             [self LoadFilmInfoWithURL:m.filmURL onComplete:^(BOOL success, FilmModel *fm) {
                 if(success){
-                    
                     [self LoadFilmChapterWithUrl:[NSString stringWithFormat:@"http://hdonline.vn/episode/vxml?film=%@",fm.filmUUID] refLink:fm.filmURL onComplete:^(BOOL success, NSArray *chaps) {
                         if(success){
                             complete(TRUE,chaps);

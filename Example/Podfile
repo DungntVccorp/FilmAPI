@@ -8,5 +8,3 @@ target 'FilmAPI', :exclusive => true do
   pod 'FCFileManager'
 end
 
-target 'Tests', :exclusive => true do
-end

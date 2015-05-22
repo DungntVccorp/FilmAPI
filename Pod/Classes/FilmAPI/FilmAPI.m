@@ -317,7 +317,7 @@
             f.filmID = [[[[f.filmURL componentsSeparatedByString:@"."] firstObject] componentsSeparatedByString:@"-"] lastObject];
             if(arr.count == 1){
                 TFHppleElement *e = arr.lastObject;
-                f.FilmName = [e.raw stringByStrippingWhitespace];
+                f.FilmName = [[e.raw stringByStrippingHTML] stringByStrippingWhitespace];
                 
             }
             

@@ -26,4 +26,5 @@
 -(void)LoadFilmChapterWithUrl:(NSString *)url refLink:(NSString *)ref onComplete:(void (^)(BOOL success,NSArray *chaps))complete;
 -(void)LoadDirectLinkWithChap:(FilmChapter *)chap onComplete:(void (^)(BOOL success,PlayerItem *listDirectLink))complete;
 -(void)SearchFilmWithName:(NSString *)filmSearchtext onComplete:(void (^)(BOOL success,NSArray *listFilmSearch))complete;
+-(void)SearchFilmMovieWithName:(NSString *)filmSearchtext onComplete:(void (^)(BOOL suc,NSArray *items))complete;
 @end

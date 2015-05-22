@@ -14,11 +14,9 @@
 @implementation PlayerItem
 
 -(void)getPlayerlink:(void (^)(NSMutableArray *))complete{
-    self.file = [self.file decode];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.file]];
-        NSString *StringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        if([StringData rangeOfString:@"list.m3u8"].location != NSNotFound){
+        if([self.file rangeOfString:@"list.m3u8"].location != NSNotFound){
             NSMutableArray *list = [NSMutableArray new];
             M3U8 *m3 = [M3U8 new];
             m3.URI = [self.file stringByReplacingOccurrencesOfString:@"playlist.m3u8" withString:@"list.m3u8"];
@@ -27,28 +25,41 @@
                 complete(list);
             });
         }
-        else if([StringData rangeOfString:@"#EXT-X-VERSION"].location != NSNotFound){
-            NSArray *arrtemp = [StringData componentsSeparatedByString:@"\n"];
-            int index = 0;
-            NSMutableArray *list = [NSMutableArray new];
-            for(NSString *str in arrtemp){
-                if([str rangeOfString:@"#EXT-X-STREAM-INF"].location != NSNotFound)
-                {
-                    NSString *bandwidth = [[[[str componentsSeparatedByString:@"BANDWIDTH="] lastObject] componentsSeparatedByString:@",CODECS="] firstObject];
-                    NSString *resolution = [[[[[str componentsSeparatedByString:@"ESOLUTION="] lastObject] componentsSeparatedByString:@"x"] firstObject] stringByAppendingString:@"P"];
-                    NSString *URI = arrtemp[index +1];
-                    M3U8 *m3 = [M3U8 new];
-                    m3.bandwidth = bandwidth;
-                    m3.resolution = resolution;
-                    m3.URI = URI;
-                    [list addObject:m3];
-                }
-                index += 1;
+        else{
+            self.file = [self.file decode];
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.file]];
+            NSString *StringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            if([StringData rangeOfString:@"list.m3u8"].location != NSNotFound){
+                NSMutableArray *list = [NSMutableArray new];
+                M3U8 *m3 = [M3U8 new];
+                m3.URI = [self.file stringByReplacingOccurrencesOfString:@"playlist.m3u8" withString:@"list.m3u8"];
+                [list addObject:m3];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    complete(list);
+                });
             }
-            complete(list);
+            else if([StringData rangeOfString:@"#EXT-X-VERSION"].location != NSNotFound){
+                NSArray *arrtemp = [StringData componentsSeparatedByString:@"\n"];
+                int index = 0;
+                NSMutableArray *list = [NSMutableArray new];
+                for(NSString *str in arrtemp){
+                    if([str rangeOfString:@"#EXT-X-STREAM-INF"].location != NSNotFound)
+                    {
+                        NSString *bandwidth = [[[[str componentsSeparatedByString:@"BANDWIDTH="] lastObject] componentsSeparatedByString:@",CODECS="] firstObject];
+                        NSString *resolution = [[[[[str componentsSeparatedByString:@"ESOLUTION="] lastObject] componentsSeparatedByString:@"x"] firstObject] stringByAppendingString:@"P"];
+                        NSString *URI = arrtemp[index +1];
+                        M3U8 *m3 = [M3U8 new];
+                        m3.bandwidth = bandwidth;
+                        m3.resolution = resolution;
+                        m3.URI = URI;
+                        [list addObject:m3];
+                    }
+                    index += 1;
+                }
+                complete(list);
+            }
+            
         }
-        
-        
     });
 }
 -(NSTimeInterval)timeFromString:(NSString *)timeString{

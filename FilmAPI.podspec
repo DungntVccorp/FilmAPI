@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = "FilmAPI"
-s.version          = "1.0.1"
+s.version          = "1.0.5.2"
 s.summary          = "DzLib dungnt Collection liblary FilmAPI Movie DB"
 s.homepage         = "https://github.com/DungntVccorp/FilmAPI.git"
 s.license          = 'Apache License'
@@ -12,5 +12,8 @@ s.source_files = 'Pod/Classes/FilmAPI/*.{h,m}'
 s.dependency 'hpple'
 s.dependency 'AFNetworking'
 s.dependency 'DzCategory'
+s.dependency 'XMLDictionary'
+s.dependency 'FCFileManager'
+
 
 end

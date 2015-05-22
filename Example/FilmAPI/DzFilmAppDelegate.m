@@ -7,12 +7,31 @@
 //
 
 #import "DzFilmAppDelegate.h"
-
+#import "DzFilmAPI.h"
 @implementation DzFilmAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [[[FilmAPI sharedAPI] manager] GET:@"https://drive.google.com/uc?export=download&id=0B1nXpe6RRjNcX2dqNVgyZ3JWLXc" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *path = [FCFileManager pathForDocumentsDirectory];
+        path = [path stringByAppendingString:@"/data.plist"];
+        [operation.responseData writeToFile:path atomically:YES];
+        [[FilmAPI sharedAPI] setDataParser:[NSDictionary dictionaryWithContentsOfFile:path]];
+        [[FilmAPI sharedAPI] SearchFilmMovieWithName:@"Mad Max" onComplete:^(BOOL suc, NSArray *items) {
+            for(FilmChapter *chap in items){
+                NSLog(@"%@",[chap.chapFile decode]);
+            }
+        }];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"FAILURE");
+        NSString *path = [FCFileManager pathForDocumentsDirectory];
+        path = [path stringByAppendingString:@"/data.plist"];
+        [[FilmAPI sharedAPI] setDataParser:[NSDictionary dictionaryWithContentsOfFile:path]];
+    }];
+    
     return YES;
 }
 							

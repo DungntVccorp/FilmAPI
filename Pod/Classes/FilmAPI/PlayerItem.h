@@ -17,6 +17,6 @@
 @property(nonatomic,strong)NSString *title;
 
 -(void)getPlayerlink:(void(^)(NSMutableArray *urls))complete;
-
+-(void)getListSubtitleWidthCurrentIndex:(int)index complete:(void(^)(NSMutableArray *subs))complete;
 
 @end

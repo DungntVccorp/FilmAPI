@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05D25E7313BD204CA58CF630 /* libPods-FilmAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E168AD8D832A2ABC5EEDEB /* libPods-FilmAPI.a */; };
 		40EE51771B0997A100127778 /* FilmAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE51761B0997A100127778 /* FilmAPI.m */; };
 		40EE517A1B0997D200127778 /* FilmModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE51791B0997D200127778 /* FilmModel.m */; };
 		40EE517D1B0997F900127778 /* FilmChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE517C1B0997F900127778 /* FilmChapter.m */; };
@@ -84,6 +85,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
+				05D25E7313BD204CA58CF630 /* libPods-FilmAPI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

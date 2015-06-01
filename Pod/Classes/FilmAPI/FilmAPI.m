@@ -57,7 +57,7 @@
                     
                     if([self.dataParser[@"A03"] isEqualToString:ec.tagName]){
                         for(TFHppleElement *en in ec.children){
-                            if([self.dataParser[@"A04"] isEqualToString:en.tagName]){
+                            if([self.dataParser[@"A04"] isEqualToString:en.tagName] && [self.dataParser[@"A110"] isEqualToString:en.attributes[self.dataParser[@"A111"]]]){
                                 fm.FilmName = en.text;
                             }
                         }
@@ -123,6 +123,7 @@
                             film.filmURL = e2.attributes[self.dataParser[@"A18"]];
                             film.filmID = [[[[film.filmURL componentsSeparatedByString:@"."] firstObject] componentsSeparatedByString:@"-"] lastObject];
                             for(TFHppleElement *e3 in e2.children){
+                                
                                 if([self.dataParser[@"A19"] isEqualToString:e3.tagName]){
                                     if([self.dataParser[@"A20"] isEqualToString:e3.attributes[self.dataParser[@"A21"]]]){
                                         for(TFHppleElement *e4 in e3.children){
@@ -135,16 +136,15 @@
                                 if([self.dataParser[@"A24"] isEqualToString:e3.tagName]){
                                     film.FilmName = e3.text;
                                 }
+                                if ([self.dataParser[@"A04"] isEqualToString:e3.tagName] && [self.dataParser[@"A112"] isEqualToString:e3.attributes[self.dataParser[@"A113"]]]){
+                                    film.FilmName = e3.text;
+                                }
                             }
                             [arrFilmInGroup addObject:film];
                         }
                     }
-                    
                     [gr setObject:arrFilmInGroup forKey:gr.allKeys.lastObject];
-                    
                     [arrGroups addObject:gr];
-                    
-                    
                 }
                 
                 
@@ -317,7 +317,7 @@
             f.filmID = [[[[f.filmURL componentsSeparatedByString:@"."] firstObject] componentsSeparatedByString:@"-"] lastObject];
             if(arr.count == 1){
                 TFHppleElement *e = arr.lastObject;
-                f.FilmName = [e.raw stringByStrippingWhitespace];
+                f.FilmName = [self stringByStrippingHTML:e.raw];
                 
             }
             

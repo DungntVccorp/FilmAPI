@@ -19,11 +19,9 @@
         path = [path stringByAppendingString:@"/data.plist"];
         [operation.responseData writeToFile:path atomically:YES];
         [[FilmAPI sharedAPI] setDataParser:[NSDictionary dictionaryWithContentsOfFile:path]];
-        [[FilmAPI sharedAPI] SearchFilmMovieWithName:@"Mad Max" onComplete:^(BOOL suc, NSArray *items) {
-            for(FilmChapter *chap in items){
-                NSLog(@"%@",[chap.chapFile decode]);
-            }
-        }];
+       [[FilmAPI sharedAPI] GetHomePageWithDone:^(BOOL success, NSArray *listBanner, NSArray *listFilm, NSDictionary *leftMenu) {
+           
+       }];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"FAILURE");
